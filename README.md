@@ -29,6 +29,24 @@ User・Project・Task の3モデルを持つ、シンプルなタスク管理ア
 - 期限未設定の未完了タスク一覧
 - 期限切れタスクの強調表示（赤表示・ラベル）
 
+---
+
+## データ構成
+User
+- name（必須）
+  - has_many :projects
+
+Project
+- name（必須）
+  - belongs_to :user
+  - has_many :tasks
+
+Task
+- title（必須）
+  - status（todo / doing / done）
+  - due_date（任意）
+  - belongs_to :project
+
 ## セットアップ手順
 
 ```bash
