@@ -47,6 +47,15 @@ Task
 - due_date（任意）
 - belongs_to :project
 
+---
+
+### 設計で意識した点
+
+- 業務で一般的な「担当者 → 案件 → タスク」の関係が直感的に理解できるよう、User・Project・Task の3モデル構成を採用しました。
+- Taskの状態管理には enum を使用し、状態遷移を明確にしています。
+- 一覧画面ではN+1問題を避けるため、必要に応じて includes を利用しています。
+- Rails 8 の enum 定義方式（enum :status, values）に対応した実装としています。
+
 ## セットアップ手順
 
 ```bash
