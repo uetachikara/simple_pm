@@ -34,18 +34,18 @@ User・Project・Task の3モデルを持つ、シンプルなタスク管理ア
 ## データ構成
 User
 - name（必須）
-  - has_many :projects
+- has_many :projects
 
 Project
 - name（必須）
-  - belongs_to :user
-  - has_many :tasks
+- belongs_to :user
+- has_many :tasks
 
 Task
 - title（必須）
-  - status（todo / doing / done）
-  - due_date（任意）
-  - belongs_to :project
+- status（todo / doing / done）
+- due_date（任意）
+- belongs_to :project
 
 ## セットアップ手順
 
